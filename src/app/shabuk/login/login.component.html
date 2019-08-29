@@ -1,0 +1,66 @@
+<!--===================================== LOGIN =================================-->
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-b-90">
+      <form [formGroup]="frmLogin" class="login100-form validate-form flex-sb flex-w">
+
+        <!--===================================== LOGO =================================-->
+        <div class="login100-form-title">
+          <img class="logo" src="assets/images/shabuk_logo.png"/>
+        </div>
+
+        <!--===================================== TITLE =================================-->
+        <div class="text-center map-tittle">
+          Iniciar sesión
+        </div>
+
+        <!--===================================== EMAIL SPACE =================================-->
+        <!-- <span class="text-danger">El correo es obligatorio</span> -->
+        <div class="wrap-input100 m-b-16">
+          <input formControlName="txtEmail"
+                 class="input100"
+                 type="text"
+                 name="username"
+                 placeholder="Correo UdeA">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--===================================== PASSWORD SPACE =================================-->
+        <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+        <div class="wrap-input100 m-b-16" data-validate="Password is required">
+          <input formControlName="txtPassword"
+                 class="input100"
+                 type="password"
+                 name="pass"
+                 placeholder="Contraseña">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--===================================== REMEMBER USER =================================-->
+        <div class="flex-sb-m w-full p-t-3 p-b-24">
+          <!--<div class="contact100-form-checkbox">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <label class="label-checkbox100" for="ckb1">
+              Recordar mi usuario
+            </label>
+          </div>-->
+
+          <!--===================================== LINK TO REGISTRATION =================================-->
+          <div>
+            <a routerLink="/registry" class=".text-primary">
+              ¿No tienes cuenta?
+            </a>
+          </div>
+        </div>
+
+        <!--===================================== ENTER BUTTON =================================-->
+        <div class="container-login100-form-btn m-t-17">
+          <button [disabled]="!frmLogin.valid" class="login100-form-btn" type="submit" (click)="login()">
+            Ingresar
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

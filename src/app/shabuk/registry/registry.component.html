@@ -1,0 +1,116 @@
+<!--================= LOGO =======================-->
+<div class="logoContainer text-center">
+  <img class="logo" src="assets/images/shabuk_logo.png"/>
+</div>
+
+<!--===================================== TITLE =================================-->
+<div class="text-center map-tittle">
+  Registro
+</div>
+
+<!--================= STEPPER =======================-->
+<mat-vertical-stepper [linear]="true">
+
+  <!--================= STEP 1 =======================-->
+  <mat-step [editable]="true"  [completed]="frmRegistry.valid && passwordsEquals && formSended">
+      <form (ngSubmit)="registry()" [formGroup]="frmRegistry">
+        <ng-template matStepLabel>Registrar datos</ng-template>
+        <!--================ EMAIL =================-->
+        <div class="wrap-input100 m-b-16">
+          <input formControlName="txtEmail"
+                 class="input100"
+                 type="text"
+                 name="email"
+                 placeholder="Correo UdeA">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--================ PASSWORD =================-->
+        <div class="wrap-input100 m-b-16">
+          <input formControlName="txtPassword"
+                 class="input100"
+                 type="password"
+                 name="pass1"
+                 placeholder="Contraseña">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--================ PASSWORD CONFIRMATION =================-->
+        <div class="wrap-input100 m-b-16" data-validate="Password is required">
+          <input formControlName="txtPasswordConfirmation"
+                 class="input100"
+                 type="password"
+                 name="pass2"
+                 placeholder="Confirmar contraseña">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--================ CHECK TO REMEMBER =================-->
+        <div class="flex-sb-m w-full p-t-3 p-b-24">
+          <!--<div class="contact100-form-checkbox">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <label class="label-checkbox100" for="ckb1">
+              Recordar mi usuario
+            </label>
+          </div>-->
+
+
+          <div>
+            <a routerLink="/registro" class=".text-primary">
+              ¿Ya tienes cuenta? / Ingresar
+            </a>
+          </div>
+        </div>
+
+        <!--================ REGISTRY BUTTON =================-->
+        <div class="container-login100-form-btn m-t-17">
+          <button [disabled]="!frmRegistry.valid || !passwordsEquals" class="login100-form-btn" type="submit">
+            Registrarme
+          </button>
+        </div>
+      </form>
+  </mat-step>
+
+  <!--================= STEP 2 =======================-->
+  <mat-step>
+    <form [formGroup]="frmPin">
+      <ng-template matStepLabel>Verificar correo</ng-template>
+      <!--================ PIN =================-->
+      <div class="wrap-input100 m-b-16">
+        <input formControlName="txtPin"
+               class="input100"
+               type="text"
+               name="pin"
+               placeholder="PIN">
+        <span class="focus-input100"></span>
+      </div>
+    </form>
+
+    <!--================ SEND PIN BUTTON =================-->
+    <div class="container-login100-form-btn m-t-17">
+      <button [disabled]="!frmPin.valid" class="login100-form-btn" type="submit" (click)="verifyEmail()">
+        Enviar
+      </button>
+    </div>
+  </mat-step>
+
+  <!--================= STEP 3 =======================-->
+  <mat-step>
+    <ng-template matStepLabel>¡Listo!</ng-template>
+    <!--================ WELCOME MESSAGE =================-->
+    <h2 class="welcomeMessage text-center">¡Ahora haces parte de Shabuk!</h2>
+    <div class="container-login100-form-btn m-t-17">
+      <button class="login100-form-btn" type="submit">
+        Entrar
+      </button>
+    </div>
+  </mat-step>
+
+  <!--================= STYLE BUTTONS STEPPER =======================-->
+  <ng-template matStepperIcon="edit">
+    <i class="fa fa-pencil"></i>
+  </ng-template>
+  <ng-template matStepperIcon="done">
+    <i class="fa fa-check"></i>
+  </ng-template>
+</mat-vertical-stepper>

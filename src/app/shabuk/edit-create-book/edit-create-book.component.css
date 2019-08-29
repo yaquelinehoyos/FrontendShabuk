@@ -1,0 +1,16 @@
+.logo{
+  width: 90px;
+  height: 90px;
+}
+
+.map-tittle{
+  margin-top: 20px;
+  font-family: Ubuntu-Bold;
+  color: #212f3c;
+  line-height: 1.2;
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 55px;
+}

@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div class="limiter">
+  <div class="container">
+    <div class="wrap-login100 p-t-50 p-b-90">
+      <form [formGroup]="frmEditCreate" class="login100-form validate-form flex-sb flex-w">
+
+        <!--===================================== LOGO =================================-->
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="login100-form-title p-b-51">
+                <img class="logo" src="assets/images/shabuk_logo.png"/>
+              </div>
+            </div>
+            <div class="col map-tittle">
+              Editar / crear libro
+            </div>
+          </div>
+        </div>
+
+        <!--===================================== BOOK NAME SPACE =================================-->
+        <div class="wrap-input100 m-b-16">
+          <input formControlName="txtName"
+                 class="input100"
+                 type="text"
+                 name="bookName"
+                 placeholder="Nombre del libro">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--===================================== BOOK AUTHOR SPACE =================================-->
+        <div class="wrap-input100 m-b-16" data-validate="Password is required">
+          <input formControlName="txtAuthor"
+                 class="input100"
+                 type="text"
+                 name="bookAuthor"
+                 placeholder="Autor o autores del libro">
+          <span class="focus-input100"></span>
+        </div>
+
+        <!--===================================== EDITION SPACE =================================-->
+        <div class="wrap-input100 m-b-16" data-validate="Password is required">
+          <input formControlName="txtEdition"
+                 class="input100"
+                 type="text"
+                 name="bookEdition"
+                 placeholder="Edición del libro">
+          <span class="focus-input100"></span>
+        </div>
+
+      <!--===================================== DESCRIPTION SPACE =================================-->
+      <div class="wrap-input100 m-b-16" data-validate="Password is required">
+        <input formControlName="txtEdition"
+               class="input100"
+               type="text"
+               name="bookEdition"
+               placeholder="Descripción del libro">
+        <span class="focus-input100"></span>
+      </div>
+      </form>
+
+      <!--===================================== EDIT/CREATE EDITION =================================-->
+      <div class="container-login100-form-btn m-t-17">
+        <button [disabled]="!frmEditCreate.valid" class="login100-form-btn" type="submit">
+          Editar/crear
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

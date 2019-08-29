@@ -1,0 +1,28 @@
+.logo{
+  width: 100px;
+  height: 100px;
+}
+
+.logoContainer{
+  margin-top: 30px !important;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+  background-color: #fe6940 !important;
+}
+
+.welcomeMessage{
+  color: #212f3c;
+}
+
+.map-tittle{
+  margin-top: 20px;
+  font-family: Ubuntu-Bold;
+  color: #212f3c;
+  line-height: 1.2;
+  font-size: 30px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 55px;
+}
