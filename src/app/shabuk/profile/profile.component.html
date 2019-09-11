@@ -11,32 +11,26 @@
 
 <!--===================================== MY LIBRARY =================================-->
 <div class="container">
-  <h1>Mi biblioteca</h1>
+  <h1>Mis libros</h1>
 </div>
 
 <!--===================================== CARDS CONTAINER =================================-->
-<div class="container">
-  <div class="card-columns">
-    <div class="card" style="width: 100%;">
-      <div class="card-body">
-        <h5 class="card-title">Nombre del libro</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Nombre del autor / autores</h6>
-        <p class="card-text">Descripción del libro: Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a routerLink="/edit-create-book" class="card-link">Editar</a>
-        <!--<a href="#" class="card-link">Another link</a>-->
-      </div>
-    </div>
 
-    <div class="card" style="width: 100%;">
-      <div class="card-body">
-        <h5 class="card-title">Nombre del libro</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Nombre del autor / autores</h6>
-        <p class="card-text">Descripción del libro: Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a routerLink="/edit-create-book" class="card-link">Editar</a>
-        <!--<a href="#" class="card-link">Another link</a>-->
-      </div>
-    </div>
-  </div>
-</div>
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">library_books</mat-icon>
+      En biblioteca
+    </ng-template>
+    <book-card [book]="book" *ngFor="let book of localBooks; let i = index"></book-card>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">public</mat-icon>
+      Publicados
+    </ng-template>
+    <book-card [book]="book" *ngFor="let book of publicBooks; let i = index"></book-card>
+  </mat-tab>
+
+</mat-tab-group>

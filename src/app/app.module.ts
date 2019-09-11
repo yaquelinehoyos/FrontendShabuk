@@ -14,6 +14,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProfileComponent } from './shabuk/profile/profile.component';
 import {MatFormFieldModule, MatStepperModule} from '@angular/material';
 import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-book.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import { BookCardComponent } from './shabuk/profile/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-b
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    EditCreateBookComponent
+    EditCreateBookComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-b
     FormsModule,
     ReactiveFormsModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule,
+    MatIconModule
   ],
   exports: [
     MatStepperModule,

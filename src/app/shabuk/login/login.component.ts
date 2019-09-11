@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from '../shared/service/login.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ export class LoginComponent implements OnInit {
   frmLogin: FormGroup;
 
   constructor(private loginService: LoginService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
     const password = this.frmLogin.get('txtPassword').value;
     this.loginService.login(email, password).subscribe(data => {
         localStorage.setItem('apiToken', data.api_token);
-        console.log(data);
+        this.router.navigateByUrl('/home');
       },
       () => {
         console.log('Error');
