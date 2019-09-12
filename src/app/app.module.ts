@@ -12,7 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProfileComponent } from './shabuk/profile/profile.component';
-import {MatFormFieldModule, MatStepperModule} from '@angular/material';
+import {MatFormFieldModule, MatStepperModule, MatTabsModule} from '@angular/material';
 import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-book.component';
 
 @NgModule({
@@ -34,7 +34,8 @@ import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-b
     FormsModule,
     ReactiveFormsModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule
   ],
   exports: [
     MatStepperModule,

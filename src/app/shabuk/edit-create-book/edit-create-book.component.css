@@ -14,3 +14,19 @@
   background: transparent;
   height: 55px;
 }
+
+.textarea100{
+  font-family: Ubuntu-Bold;
+  color: #212f3c;
+  line-height: 1.2;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 55px;
+  padding: 10px 20px 0 38px;
+}
+
+.textarea100:disabled{
+  background-color: #FAFAFA;
+}

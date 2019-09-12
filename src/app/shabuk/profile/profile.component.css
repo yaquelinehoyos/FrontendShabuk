@@ -5,3 +5,7 @@
 .card{
   background-color: #ECEFF1 !important;
 }
+
+.cardsContainer{
+  padding-top: 20px;
+}
