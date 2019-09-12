@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'book-card',
@@ -10,6 +10,8 @@ export class BookCardComponent implements OnInit {
   @Input()
   book:any;
 
+  @Output() onEdit = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +20,10 @@ export class BookCardComponent implements OnInit {
 
   getBookAuthorsText(authors){
     return authors.map(x=>x.full_name).join(", ")
+  }
+
+  editBook(){
+    this.onEdit.emit(Object.assign({}, this.book));
   }
 
 }

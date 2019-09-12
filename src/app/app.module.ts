@@ -12,11 +12,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProfileComponent } from './shabuk/profile/profile.component';
-import {MatFormFieldModule, MatStepperModule} from '@angular/material';
+import {MatFormFieldModule, MatStepperModule, MatButtonModule} from '@angular/material';
 import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-book.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
-import { BookCardComponent } from './shabuk/profile/book-card/book-card.component';
+import { BookCardComponent } from './shabuk/library/book-card/book-card.component';
+import { LibraryComponent } from './shabuk/library/library.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BookCardComponent } from './shabuk/profile/book-card/book-card.componen
     FooterComponent,
     ProfileComponent,
     EditCreateBookComponent,
-    BookCardComponent
+    BookCardComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { BookCardComponent } from './shabuk/profile/book-card/book-card.componen
     MatStepperModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     MatStepperModule,

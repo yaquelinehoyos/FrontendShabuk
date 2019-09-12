@@ -1,0 +1,23 @@
+<app-header></app-header>
+<!--===================================== CARDS CONTAINER =================================-->
+
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">library_books</mat-icon>
+      En biblioteca
+    </ng-template>
+    <book-card (onEdit)="editBook($event)" [book]="book" *ngFor="let book of localBooks; let i = index"></book-card>
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">public</mat-icon>
+      Publicados
+    </ng-template>
+    <book-card (onEdit)="editBook($event)" [book]="book" *ngFor="let book of publicBooks; let i = index"></book-card>
+  </mat-tab>
+
+</mat-tab-group>
+
+<button routerLink="/edit-create-book" [state]="{ book: null }" mat-fab color="primary" class="add-btn"><mat-icon>add</mat-icon></button>
