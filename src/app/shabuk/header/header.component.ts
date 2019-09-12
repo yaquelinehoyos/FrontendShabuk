@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() includeBackButton:boolean=false;
+  @Input() showSearch:boolean=true;
+  @Input() title:String=null;
+
+  constructor(private _location: Location) { }
 
   ngOnInit() {
+  }
+
+  onBack(){
+    this._location.back();
   }
 
 }

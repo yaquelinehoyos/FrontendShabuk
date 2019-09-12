@@ -1,11 +1,11 @@
-<app-header></app-header>
+<app-header [includeBackButton]="true" [showSearch]="false" [title]="(editionMode)?'Editar libro':'Crear libro'"></app-header>
 
 <div class="limiter">
   <div class="container">
-    <div class="wrap-login100 p-t-50 p-b-90">
+    <div class="p-t-50 p-b-90">
       <form [formGroup]="frmEditCreate" class="login100-form validate-form flex-sb flex-w">
 
-        <!--===================================== LOGO =================================-->
+        <!--===================================== LOGO =================================
         <div class="container">
           <div class="row">
             <div class="col">
@@ -14,11 +14,11 @@
               </div>
             </div>
             <div class="col map-tittle">
-              Editar / crear libro
+              {{(editionMode)?'Editar libro':'Crear libro'}}
             </div>
           </div>
         </div>
-
+        -->
         <!--===================================== BOOK NAME SPACE =================================-->
         <div class="wrap-input100 m-b-16">
           <input formControlName="txtName"

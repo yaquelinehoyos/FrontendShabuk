@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DummyService } from '../shared/service/dummy.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dummyService:DummyService) { }
+
+  localBooks=[]
+  publicBooks=[]
 
   ngOnInit() {
+      this.dummyService.getUserLocalBooks().then(x=>this.localBooks=x);
+      this.dummyService.getUserPublicBooks().then(x=>{
+        console.log(x);
+        this.publicBooks=x;
+      });
   }
 
 }

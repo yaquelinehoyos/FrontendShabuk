@@ -12,8 +12,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ProfileComponent } from './shabuk/profile/profile.component';
-import {MatFormFieldModule, MatStepperModule, MatTabsModule} from '@angular/material';
+import {MatFormFieldModule, MatStepperModule, MatButtonModule} from '@angular/material';
 import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-book.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import { BookCardComponent } from './shabuk/library/book-card/book-card.component';
+import { LibraryComponent } from './shabuk/library/library.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-b
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    EditCreateBookComponent
+    EditCreateBookComponent,
+    BookCardComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,13 @@ import { EditCreateBookComponent } from './shabuk/edit-create-book/edit-create-b
     ReactiveFormsModule,
     MatStepperModule,
     MatFormFieldModule,
+<<<<<<< HEAD
     MatTabsModule
+=======
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule
+>>>>>>> 0e6a4df1adca19d267b24452f074adcbbaa9ade4
   ],
   exports: [
     MatStepperModule,

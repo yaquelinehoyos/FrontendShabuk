@@ -1,11 +1,9 @@
-<app-header></app-header>
+<app-header [showSearch]="false" [includeBackButton]="true"></app-header>
 
 <!--===================================== USER NAME =================================-->
-<div class="container">
+<div class="profile-header">
+  <img class="user-avatar" src="assets/images/avatars/1.png"/>
   <h2 class="userName">Aquí va el nombre del usuario</h2>
-  <div class="text-right">
-    <a routerLink="/edit-create-book" class=".text-primary">Editar / Crear libro</a>
-  </div>
 </div>
 <hr>
 

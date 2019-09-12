@@ -1,11 +1,13 @@
-.userName{
-  margin-top: 20px;
+.profile-header{
+  background-color: #fe6940;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.card{
-  background-color: #ECEFF1 !important;
+.user-avatar{
+  height: 30%;
+  width: 30%;
 }
-
 .cardsContainer{
   padding-top: 20px;
 }

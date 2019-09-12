@@ -2,7 +2,7 @@
   background-color: #fe6940 !important;
 }
 
-.nav-link{
+.nav-title{
   color: #212f3c !important;
   font-size: 15px !important;
   font-weight: bolder;
@@ -75,4 +75,13 @@
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 15px;
+}
+
+.side-content{
+  display: flex;
+  align-items: center;
+}
+
+.navbar-collapse{
+  justify-content:space-between;
 }
