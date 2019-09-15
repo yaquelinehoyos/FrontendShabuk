@@ -1,4 +1,5 @@
 .profile-header{
+  padding-top: 20px;
   background-color: #fe6940;
   display: flex;
   flex-direction: column;
@@ -8,6 +9,26 @@
   height: 30%;
   width: 30%;
 }
+
+.userName{
+  padding-top: 20px;
+  color: #212f3c !important;
+  font-size: 15px !important;
+  font-weight: bolder;
+}
+
 .cardsContainer{
   padding-top: 20px;
+}
+
+.add-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  background-color: #fe6940 !important;
+}
+
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color, #fe6940) !important;
 }

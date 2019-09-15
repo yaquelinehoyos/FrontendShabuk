@@ -41,13 +41,9 @@ import { LibraryComponent } from './shabuk/library/library.component';
     ReactiveFormsModule,
     MatStepperModule,
     MatFormFieldModule,
-<<<<<<< HEAD
-    MatTabsModule
-=======
     MatTabsModule,
     MatIconModule,
     MatButtonModule
->>>>>>> 0e6a4df1adca19d267b24452f074adcbbaa9ade4
   ],
   exports: [
     MatStepperModule,
