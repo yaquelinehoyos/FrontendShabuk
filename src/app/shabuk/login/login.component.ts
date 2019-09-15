@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {LoginService} from '../shared/service/login.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {AuthenticationService} from '../../shared/service/auth/authentication.service';
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +11,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   frmLogin: FormGroup;
+  loading: boolean;
+  returnUrl: string;
 
-  constructor(private loginService: LoginService,
-              private formBuilder: FormBuilder) {
+
+  constructor(private authenticationService: AuthenticationService,
+              private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router) {
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+
   }
 
   ngOnInit() {
@@ -21,23 +32,27 @@ export class LoginComponent implements OnInit {
         txtPassword: ['', [Validators.required]]
       }
     );
+    this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
+
   }
 
   login() {
-    console.log(this.frmLogin.get('txtEmail').value);
     const email = this.frmLogin.get('txtEmail').value;
     const password = this.frmLogin.get('txtPassword').value;
-    this.loginService.login(email, password).subscribe(data => {
-        localStorage.setItem('apiToken', data.api_token);
-        console.log(data);
-      },
-      () => {
-        console.log('Error');
-      },
-      () => {
-        console.log('Completado');
-      }
-    );
+    this.loading = true;
+    this.authenticationService.login(email, password).pipe(first())
+      .subscribe(data => {
+          this.router.navigate([this.returnUrl]);
+          console.log(data);
+        },
+        () => {
+          console.log('Error');
+          this.loading = false;
+        },
+        () => {
+          console.log('Completado');
+        }
+      );
   }
 
 }

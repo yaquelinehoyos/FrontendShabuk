@@ -55,7 +55,7 @@
 
         <!--===================================== ENTER BUTTON =================================-->
         <div class="container-login100-form-btn m-t-17">
-          <button [disabled]="!frmLogin.valid" class="login100-form-btn" type="submit" (click)="login()">
+          <button [disabled]="!frmLogin.valid || loading" class="login100-form-btn" type="submit" (click)="login()">
             Ingresar
           </button>
         </div>

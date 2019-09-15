@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {RegistryService} from '../shared/service/registry.service';
+import {RegistryService} from '../../shared/service/registry.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {VerifyEmailService} from '../shared/service/verify-email.service';
+import {VerifyEmailService} from '../../shared/service/verify-email.service';
 
 @Component({
   selector: 'app-registry',

@@ -6,14 +6,15 @@ import {RegistryComponent} from './shabuk/registry/registry.component';
 import {HomeComponent} from './shabuk/home/home.component';
 import {ProfileComponent} from './shabuk/profile/profile.component';
 import {EditCreateBookComponent} from './shabuk/edit-create-book/edit-create-book.component';
+import {AuthGuard} from './shared/service/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'registry', component: RegistryComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent },
   { path: 'edit-create-book', component: EditCreateBookComponent },
-  { path: '**', component: LoginComponent }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
