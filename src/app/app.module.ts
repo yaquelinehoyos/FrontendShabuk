@@ -12,11 +12,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProfileComponent} from './shabuk/profile/profile.component';
-import {MatFormFieldModule, MatSnackBarModule, MatStepperModule} from '@angular/material';
+import {MatFormFieldModule, MatStepperModule, MatButtonModule, MatSnackBarModule} from '@angular/material';
 import {EditCreateBookComponent} from './shabuk/edit-create-book/edit-create-book.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
+import {BookCardComponent} from './shabuk/library/book-card/book-card.component';
+import {LibraryComponent} from './shabuk/library/library.component';
+import {BasicAuthInterceptor} from './shared/service/auth/basic-auth.interceptor';
 import {ErrorInterceptor} from './http-error.interceptor';
 import {SuccessInterceptor} from './http-success.interceptor';
-import {BasicAuthInterceptor} from './shared/service/auth/basic-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import {BasicAuthInterceptor} from './shared/service/auth/basic-auth.interceptor
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    EditCreateBookComponent
+    EditCreateBookComponent,
+    BookCardComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ import {BasicAuthInterceptor} from './shared/service/auth/basic-auth.interceptor
     ReactiveFormsModule,
     MatSnackBarModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     MatStepperModule,

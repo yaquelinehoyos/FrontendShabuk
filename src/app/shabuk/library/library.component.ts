@@ -3,16 +3,16 @@ import { DummyService } from '../shared/service/dummy.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrls: ['./library.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class LibraryComponent implements OnInit {
 
   constructor(private dummyService:DummyService, private router:Router) { }
 
-  localBooks=[];
-  publicBooks=[];
+  localBooks=[]
+  publicBooks=[]
 
   ngOnInit() {
       this.dummyService.getUserLocalBooks().then(x=>this.localBooks=x);

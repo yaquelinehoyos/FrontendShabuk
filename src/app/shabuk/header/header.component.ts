@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../shared/service/auth/authentication.service';
+import { Component, OnInit, Input } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,14 @@ import {AuthenticationService} from '../../shared/service/auth/authentication.se
 export class HeaderComponent implements OnInit {
 
   constructor(private authenticationService: AuthenticationService,
-              private router: Router) {
+              private router: Router,
+              private _location: Location) {
   }
+
+  @Input() includeBackButton:boolean=false;
+  @Input() showSearch:boolean=true;
+  @Input() title:String=null;
+
 
   ngOnInit() {
   }
@@ -19,6 +26,10 @@ export class HeaderComponent implements OnInit {
   doLogout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
+  }
+
+  onBack(){
+    this._location.back();
   }
 
 }
