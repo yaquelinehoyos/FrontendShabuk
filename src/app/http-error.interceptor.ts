@@ -16,7 +16,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     const notifier = this.injector.get(NotificationService);
 
     return next.handle(request).pipe(catchError(err => {
-
       if (err.status === 401) {
         // auto logout if 401 response returned from api
         this.authenticationService.logout();

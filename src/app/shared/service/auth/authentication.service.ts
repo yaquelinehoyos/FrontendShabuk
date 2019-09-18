@@ -48,7 +48,7 @@ export class AuthenticationService {
   public getAccessToken(): string {
     const apiToken = JSON.parse(localStorage.getItem('api_token'));
     if (apiToken) {
-      return apiToken.access_token;
+      return apiToken.access;
     } else {
       return null;
     }

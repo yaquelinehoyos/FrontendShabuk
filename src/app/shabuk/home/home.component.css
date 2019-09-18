@@ -1,1 +1,14 @@
+.spinner-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
 
+.book-card-container{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.home-container{
+    padding: 10px;
+}

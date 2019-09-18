@@ -16,11 +16,13 @@ import {MatFormFieldModule, MatStepperModule, MatButtonModule, MatSnackBarModule
 import {EditCreateBookComponent} from './shabuk/edit-create-book/edit-create-book.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
-import {BookCardComponent} from './shabuk/library/book-card/book-card.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {UserBookCardComponent} from './shabuk/library/user-book-card/user-book-card.component';
 import {LibraryComponent} from './shabuk/library/library.component';
 import {BasicAuthInterceptor} from './shared/service/auth/basic-auth.interceptor';
 import {ErrorInterceptor} from './http-error.interceptor';
 import {SuccessInterceptor} from './http-success.interceptor';
+import { BookCardComponent } from './shabuk/home/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import {SuccessInterceptor} from './http-success.interceptor';
     FooterComponent,
     ProfileComponent,
     EditCreateBookComponent,
+    UserBookCardComponent,
     BookCardComponent,
     LibraryComponent
   ],
@@ -47,7 +50,8 @@ import {SuccessInterceptor} from './http-success.interceptor';
     MatFormFieldModule,
     MatTabsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatStepperModule,

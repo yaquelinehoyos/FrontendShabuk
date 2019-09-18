@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DummyService } from '../shared/service/dummy.service';
 import { Router } from '@angular/router';
+import {Book} from '../../shared/model/book.model'
+import { BookService } from '../../shared/service/book.service';
+import { AuthenticationService } from '../../shared/service/auth/authentication.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,15 +11,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  userEmail:String;
+  constructor(private bookService:BookService, private router:Router, public authenticationService: AuthenticationService) {
+    
+   }
 
-  constructor(private dummyService:DummyService, private router:Router) { }
-
-  localBooks=[];
-  publicBooks=[];
+  localBooks:Book[]=[];
+  publicBooks:Book[]=[];
 
   ngOnInit() {
-      this.dummyService.getUserLocalBooks().then(x=>this.localBooks=x);
-      this.dummyService.getUserPublicBooks().then(x=>this.publicBooks=x);
+      this.userEmail=this.authenticationService.currentUserValue.email;
+      this.bookService.getUserLocalBooks().then(x=>this.localBooks=x);
+      this.bookService.getUserPublicBooks().then(x=>this.publicBooks=x);
   }
 
   editBook(book){

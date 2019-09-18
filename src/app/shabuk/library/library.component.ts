@@ -20,7 +20,6 @@ export class LibraryComponent implements OnInit {
   }
 
   editBook(book){
-    console.log("edit book",book);
     this.router.navigateByUrl('/edit-create-book',{state:{book:book}});
   }
 

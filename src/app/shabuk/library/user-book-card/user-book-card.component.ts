@@ -1,16 +1,17 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Book} from '../../../shared/model/book.model'
 
 @Component({
-  selector: 'book-card',
-  templateUrl: './book-card.component.html',
-  styleUrls: ['./book-card.component.css']
+  selector: 'user-book-card',
+  templateUrl: './user-book-card.component.html',
+  styleUrls: ['./user-book-card.component.css']
 })
-export class BookCardComponent implements OnInit {
+export class UserBookCardComponent implements OnInit {
 
   @Input()
-  book:any;
+  book:Book;
 
-  @Output() onEdit = new EventEmitter<boolean>();
+  @Output() onEdit = new EventEmitter<Book>();
 
   constructor() { }
 

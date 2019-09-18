@@ -1,6 +1,13 @@
 <app-header></app-header>
-<div class="container-login100-form-btn m-t-17">
-  <button [disabled]="loading" type="submit" (click)="test()">
-    Probar seguridad
-  </button>
+<div class="home-container">
+  <div class="book-card-container" *ngFor="let book of books; let i = index">
+      <book-card [book]="book" ></book-card>
+  </div>
+    
+  <div class="spinner-container">
+    <mat-spinner *ngIf="loading" [diameter]="40"></mat-spinner>
+    <button (click)="getNextBooks()" *ngIf="!loading && lastResponse.next" mat-flat-button color="primary">
+        <mat-icon>refresh</mat-icon>  Cargar mas
+    </button>
+  </div>
 </div>
