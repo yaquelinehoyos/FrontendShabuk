@@ -5,6 +5,7 @@ import { Book } from '../model/book.model';
 import { Paginator } from '../model/paginator-model';
 import { PaginationParams } from '../model/pagination-params.model';
 import { BOOKS_STATES } from '../util/books-states';
+import { Observable } from 'rxjs';
 
 const resourceUrl = environment.SERVER_API_URL + '/books';
 
@@ -16,24 +17,20 @@ export class BookService {
   constructor(private http: HttpClient) {
   }
 
-  getBooks(pagination:PaginationParams): Promise<Paginator<Book>> {
-    return this.http.get(`${resourceUrl}?offset=${pagination.offset}&limit=${pagination.limit}`)
-    .toPromise().then();
+  getBooks(pagination:PaginationParams): Observable<Paginator<Book>> {
+    return this.http.get<Paginator<Book>>(`${resourceUrl}?offset=${pagination.offset}&limit=${pagination.limit}`);
   }
 
-  getBooksByUrl(url:String): Promise<Paginator<Book>> {
-    return this.http.get(`${url}`)
-    .toPromise().then();
+  getBooksByUrl(url:String): Observable<Paginator<Book>> {
+    return this.http.get<Paginator<Book>>(`${url}`);
   }
 
-  getUserLocalBooks(): Promise<Book[]> {
-    return this.http.get(`${resourceUrl}/user?state=${BOOKS_STATES.inLibrary}`)
-    .toPromise().then();
+  getUserLocalBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${resourceUrl}/user?state=${BOOKS_STATES.inLibrary}`)
   }
 
-  getUserPublicBooks(): Promise<Book[]> {
-    return this.http.get(`${resourceUrl}/user?state=${BOOKS_STATES.transfering}`)
-    .toPromise().then();
+  getUserPublicBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${resourceUrl}/user?state=${BOOKS_STATES.transfering}`);
   }
 
 }

@@ -21,8 +21,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
       this.userEmail=this.authenticationService.currentUserValue.email;
-      this.bookService.getUserLocalBooks().then(x=>this.localBooks=x);
-      this.bookService.getUserPublicBooks().then(x=>this.publicBooks=x);
+      this.bookService.getUserLocalBooks().subscribe(x=>this.localBooks=x);
+      this.bookService.getUserPublicBooks().subscribe(x=>this.publicBooks=x);
   }
 
   editBook(book){

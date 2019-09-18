@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
 
   loadBooks() {
     this.loading = true;
-    this.bookService.getBooks(this.paginationParams).then(this.extractBooksFromResponse.bind(this))
+    this.bookService.getBooks(this.paginationParams).subscribe(this.extractBooksFromResponse.bind(this))
   }
 
   getNextBooks(){
     if(this.lastResponse.next){
       this.loading = true;
-      this.bookService.getBooksByUrl(this.lastResponse.next).then(this.extractBooksFromResponse.bind(this))
+      this.bookService.getBooksByUrl(this.lastResponse.next).subscribe(this.extractBooksFromResponse.bind(this))
     }
   }
 
